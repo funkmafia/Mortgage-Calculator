@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Mortgage Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+
+  <main class="flex-grow">
+    <!-- 🎯 HERO BANNER -->
+    <section class="bg-gray-100 py-16">
+      <div class="container mx-auto px-6 flex flex-col-reverse md:flex-row items center justify-between">
+
+        <div class="w-full md:w-1/2 text-center md:text-left space-y-4 px-12">
+          <h1 class="text-4-xl md:text-5xl font-extrabold text-gray-800"> Smart Mortgage Calculator</h1>
+
+          <p class="text-lg text-gray-600"> Estimate your monthly payments this instance.
+            <br> Free, Fast, and Accurate
+          </p>
+
+          <a href="" class="inline-block bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition"> Try
+            it now!</a>
+        </div>
+
+        <div class="w-full md:w-1/2 mb-10 md:mb-0">
+          <img src="jakub-zerdzicki-Snk488INnQs-unsplash.jpg" alt="hand holding a house peice" class="w-full max-w-md mx-auto rounded-lg hover:shadow-lg hover:scale-[1.02] transition-transform duration-200 ease-in-out"" />
+        </div>
+      </div>
+    </section>
+
+    <!-- === INTRO PARAG === -->
+
+    <section class= "bg-white py-6 px-4 text-center max-w-6xl mx-auto my-8 rounded-xl shadow-md hover:shadow-lg hover:scale-[1.02] transition-transform duration-200 ease-in-out">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-2">Why Use Our Mortgage Calculator?</h2>
+        <p class="text-gray-700 text-base">
+          Whether you're a first-time buyer or planning your next move, our Smart Mortgage Calculator helps you estimate your monthly payments in seconds. 
+          It's fast, free, and incredibly easy to use — helping you make more confident financial decisions.
+        </p>
+  
+
+    </section>
+
+    <!-- === USER GUIDE SECTION === -->
+    <section>
+      <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto my-10">
+
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg text-center transition">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-2">Step 1:</h2>
+          <p class="text-gray-700 text-base">Enter the loan details</p>
+          <p class=" text-2xl text-base">🏦</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg text-center transition">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-2">Step 2:</h2>
+          <p class="text-gray-700 text-base">Hit Calculate</p>
+          <p class=" text-2xl text-base"> 🎯 </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg text-center transition">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-2">Step 3:</h2>
+          <p class="text-gray-700 text-base">View monthly cost</p>
+          <p class=" text-2xl text-base"> 💰 </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- === Calculator section === -->
+    <section class="bg-white py-12 px-4" id="mortgage">
+      <div class="max-w-2xl mx-auto px-4">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Mortgage Calculator</h2>
+        <form class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-rows-2 gap-6">
+            <div>
+              <label for="fname" class="block text-sm font-medium text-gray-700">First Name</label>
+              <input id="firstName" type="text" placeholder="Jane" required
+                class="mt-1 block w-full rounded-md bg-gray-100 border border-gray-300 text-gray-900 py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+            <div>
+              <label for="lname" class="block text-sm font-medium text-gray-700">Last Name</label>
+              <input id="lastName" type="text" placeholder="Doe" required
+                class="mt-1 block w-full rounded-md bg-gray-100 border border-gray-300 text-gray-900 py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div>
+              <label for="loan-amount" class="block text-sm font-medium text-gray-700">Loan Amount</label>
+              <input id="loanAmount" type="text" placeholder="200,000" required
+                class="mt-1 block w-full rounded-md bg-gray-100 border border-gray-300 text-gray-900 py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+            <div>
+              <label for="loan-term" class="block text-sm font-medium text-gray-700">Loan Term (Years)</label>
+              <input id="loanTerm" type="text" placeholder="25" required
+                class="mt-1 block w-full rounded-md bg-gray-100 border border-gray-300 text-gray-900 py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+            <div>
+              <label for="interest-rate" class="block text-sm font-medium text-gray-700">% Interest Rate</label>
+              <input id="interestRate" type="text" placeholder="4%" required
+                class="mt-1 block w-full rounded-md bg-gray-100 border border-gray-300 text-gray-900 py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+          </div>
+          <div class="flex flex-col sm:flex-row justify-center gap-4 text-center">
+            <button id="calculateBtn" type="submit"
+              class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Calculate</button>
+          <div class="text-center">
+            <button id="resetBtn" type="button" 
+              class="bg-gray-300 text-black px-6 py-3 rounded-lg hover:bg-gray-700 transition">Reset Calculator</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- === RESULT & SUMMARYS SECTION === -->
+    <section class="bg-gray-100 py-8 px-12">
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition text-center">
+        <h2 class="text-2xl md:text-xl sm:text-xl font-extrabold text-gray-800">Your monthly payment</h2> 
+        <p id="displayResult" class="text-xl text-gray-600 mt-6"></p>
+        <div id="summarySection" class="mt-6 text-sm text-gray-700 space-y-4 my-6"></div>
+      </div>
+    </section>
+
+
+<!-- === CONTACT US FORM === -->
+<section class="bg-white py-12 px-4" id="contact">
+  <div class="max-w-2xl mx-auto">
+    <h2 class="text-3xl font-extrabold text-gray-800 mb-4 text-center">Let's Make Sense of Your Results Together</h2>
+    <p class="text-lg text-gray-600 mb-6 text-center">Our mortgage experts are here to help break it down — simply provide your contact details and we'll be in touch shortly with clear, honest guidance.</p>
+    
+    <form class="space-y-6">
+      <div class="grid grid-cols-1 md:grid-rows-2 gap-6">
+        <div>
+          <label for="contactFirstName" class="block text-sm font-medium text-gray-700">First Name</label>
+          <input id="contactFirstName" type="text" placeholder="Jane" required
+            class="mt-1 block w-full rounded-md bg-gray-100 border border-gray-300 text-gray-900 py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-400">
+        </div>
+        <div>
+          <label for="contactLastName" class="block text-sm font-medium text-gray-700">Last Name</label>
+          <input id="contactLastName" type="text" placeholder="Doe" required
+            class="mt-1 block w-full rounded-md bg-gray-100 border border-gray-300 text-gray-900 py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-400">
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label for="contactEmail" class="block text-sm font-medium text-gray-700">Email</label>
+            <input id="contactEmail" type="email" placeholder="jane.doe@example.com" required class="mt-1 block w-full rounded-md bg-gray-100 border border-gray-300 text-gray-900 py-2 px-4 focus:outline-non focus:ring-2 focus:ring-blue-400">
+          </div>
+          <div>
+            <label for="contactPhone" class="block text-sm font-medium text-gray-700">Number</label>
+            <input id="contactPhone" type="tel" placeholder="07700900123" required class="mt-1 block w-full rounded-md bg-gray-100 border border-gray-300 text-gray-900 py-2 px-4 focus:outline-non focus:ring-2 focus:ring-blue-400">
+          </div>
+        </div>
+
+        <div>
+          <label for="contactMessage" class="block text-sm font-medium text-gray-700">Your Message</label>
+          <textarea id="contactMessage" rows="4" placeholder="Your message ..." class="mt-1 block w-full rounded-md bg-gray-100 border border-gray-300 text-gray-900 py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+        </div>
+
+        <div>
+          <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition w-full sm:w-auto">Request a Call Back</button>           
+        </div>
+    </form>
+  </div>
+</section>
+
+  </main>
+
+  <script src="script.js">
+
+  </script>
+
+  <!-- 🔚 Footer -->
+  <footer class="bg-blue-500 w-full h-[8rem] px-4 py-6">
+    <h3 class="text-xl md:text-sm font-extrabold text-white"> Smart Mortgage Calculator</h3>
+    <p class="text-lg text-white py-5"> © 2025 Copyright FunkMafia, Inc. Smart Calculator, Inc & QuickMaths, Inc. All
+      rights reserved.</p>
+  </footer>
+</body>
+
+</html>
+
+<!-- NEW FEATURES learn today 15.04 
+*flex-col-reverse md:flex-row / stacks on mobile, side by side on desktop 
+*text-4xl md:text-5xl / responsive text scalings
+*img with max-w-md / this keeps image clean and centered 
+*container mx-auto px-6 / centers content and adds horizontal padding
+-->
