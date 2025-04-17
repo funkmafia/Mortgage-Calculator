@@ -66,7 +66,7 @@ form.addEventListener("submit", (event) => {
 // .trim removes any spaces at the start of end of the string, purely for best practice
 // parse float checks and conversts the input from a string to a number
 
-loanAmountInput.addEventListener("click", () => {
+loanAmountInput.addEventListener("change", () => {
   const amount = parseFloat(loanAmountInput.value);
   if (isNaN(amount)) {
     alert("Please enter a number");
