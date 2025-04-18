@@ -14,16 +14,16 @@
   <main class="flex-grow">
     <!-- 🎯 HERO BANNER -->
     <section class="bg-gray-100 py-16">
-      <div class="container mx-auto px-6 flex flex-col-reverse md:flex-row items center justify-between">
+      <div class="container mx-auto px-6 flex flex-col-reverse md:flex-row items-center justify-between">
 
-        <div class="w-full md:w-1/2 text-center md:text-left space-y-4 px-12">
+        <div class="w-full md:w-1/2 text-center md:text-left space-y-4 px-12 flex flex-col justify-center h-full">
           <h1 class="text-4-xl md:text-5xl font-extrabold text-gray-800"> Smart Mortgage Calculator</h1>
 
           <p class="text-lg text-gray-600"> Estimate your monthly payments this instance.
             <br> Free, Fast, and Accurate
           </p>
 
-          <a href="" class="inline-block bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition"> Try
+          <a href="mortgage" class="inline-block bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition"> Try
             it now!</a>
         </div>
 
@@ -131,7 +131,7 @@
     <h2 class="text-3xl font-extrabold text-gray-800 mb-4 text-center">Let's Make Sense of Your Results Together</h2>
     <p class="text-lg text-gray-600 mb-6 text-center">Our mortgage experts are here to help break it down — simply provide your contact details and we'll be in touch shortly with clear, honest guidance.</p>
     
-    <form class="space-y-6">
+    <form id="callbackForm" class="space-y-6">
       <div class="grid grid-cols-1 md:grid-rows-2 gap-6">
         <div>
           <label for="contactFirstName" class="block text-sm font-medium text-gray-700">First Name</label>
@@ -160,7 +160,7 @@
         </div>
 
         <div>
-          <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition w-full sm:w-auto">Request a Call Back</button>           
+          <button type="submit" id="callback" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition w-full sm:w-auto">Request a Call Back</button>           
         </div>
     </form>
   </div>

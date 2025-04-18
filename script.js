@@ -12,6 +12,12 @@ const clearButton = document.getElementById("resetBtn");
 clearButton.addEventListener("click", handleReset);
 const form = document.getElementById("mortgage");
 const summarySection = document.getElementById("summarySection"); 
+const callbackForm = document.getElementById("callbackForm");
+const fName = document.getElementById("contactFirstName")
+const lName = document.getElementById("contactLastName")
+const userEmail = document.getElementById("contactEmail")
+const userNum = document.getElementById("contactPhone")
+const userMessage = document.getElementById("contactMessage")
 
 // === 2. state variables ===
 
@@ -75,6 +81,18 @@ loanAmountInput.addEventListener("change", () => {
   console.log("Loan amount Entered:", amount);
 });
 
+callbackForm.addEventListener("submit", (event) => {
+  event.preventDefault(); 
+  const contactFirstName = fName.value.trim(); 
+  const contactLastName = lName.value.trim(); 
+  const contactEmail = String(userEmail.value).trim(); 
+  const contactPhone = userNum.value; 
+  const contactMessage = userMessage.value.trim(); 
+
+  handleContactSubmission(contactFirstName, contactLastName, contactEmail, contactPhone, contactMessage);
+});
+
+
 // === 4. Core functions ===
 // DO MORE WORK ON UNDERSTAND FUNCTIONS AND UNDERSTANDING THE SYNTAX AND STRUCTURE *** 
 
@@ -108,15 +126,35 @@ function handleReset() {
   summarySection.innerHTML = "";
 }
 
+// what do we do with this data stage 
 
+function handleContactSubmission(contactFirstName, contactLastName, contactEmail, contactPhone, contactMessage) {
+  const phoneDigits = String(contactPhone).replace(/\D/g, "");
 
+  if(!contactEmail.includes("@")) {
+    alert("Please enter a valid email address");
+    return;
+  }
 
+  if (phoneDigits.length !== 11) {
+    alert("Please enter a valid UK phone number (must be exactly 11 digits).");
+    return;
+  }
+  
+  if (!phoneDigits.startsWith("07")) {
+    alert("UK mobile numbers must start with '07' 👀");
+    return;
+  }
 
+  console.log("Contact Form Submission:");
+  console.log("First Name:", contactFirstName);
+  console.log("Last Name:", contactLastName);
+  console.log("Email:", contactEmail);
+  console.log("Phone:", contactPhone);
+  console.log("Message", contactMessage);
 
-
-
-
-
+  alert("Thank you for your message ! We'll be in touch soon.");
+}
 
 // loan(p) 200,000 (r)rate = 5%  term = 25 yr total num of payments(n)
 // p = 200,000 r = (5/100) / 12 = 0.004167 and n = 25 * 12 = 300
