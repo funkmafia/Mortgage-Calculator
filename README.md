@@ -4,6 +4,22 @@ An interactive, responsive mortgage calculator designed to help users estimate t
 
 ---
 
+## 🖥️ Structure
+
+Home
+├── Mortgage Tools (dropdown)
+│   ├── Mortgage Calculator
+│   ├── ffordability Checker Stamp Duty Calculator
+│   ├── Stamp Duty Calculator
+├── Blog (dropdown)
+│   ├── Recent Updates
+│   ├── Market Rates
+│   └── First-Time Buyer Tips
+│   └── Conveyancor call back request? 
+├── Get Advice (anchor → #contact) 
+├── About Us
+├── FAQ / Help
+
 
 ## ✨ Features
 
@@ -15,7 +31,7 @@ An interactive, responsive mortgage calculator designed to help users estimate t
 - ✅ Contact form to request a call back from an advisor
 - ✅ Clean, modern UI with Tailwind CSS
 
----
+--- 
 
 ## 📚 How It Works
 
